@@ -1,0 +1,87 @@
+/* MCCB site B: one screen, one action */
+
+:root {
+  --evergreen: #16382A;
+  --emerald: #2E7D3C;
+  --cream: #FAF7EE;
+  --dawn: #E3C777;
+  --white: #FFFFFF;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Lato", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { background: var(--evergreen); }
+
+body {
+  margin: 0;
+  min-height: 100vh; min-height: 100svh;
+  display: flex; flex-direction: column;
+  font-family: var(--sans);
+  font-size: 1.125rem; line-height: 1.7;
+  color: var(--cream);
+}
+
+:focus-visible { outline: 3px solid var(--dawn); outline-offset: 3px; }
+
+main {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.25rem 3rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 105%, rgba(227, 199, 119, .5) 0%, rgba(227, 199, 119, .16) 45%, transparent 75%),
+    linear-gradient(180deg, #123024 0%, var(--evergreen) 60%, #1d4a35 100%);
+}
+
+.logo {
+  width: clamp(170px, 40vw, 240px); height: auto;
+  aspect-ratio: 1 / 1; object-fit: contain;
+  background: var(--white); border-radius: 24px; padding: 4px;
+  box-shadow: 0 0 0 4px rgba(227, 199, 119, .45);
+  margin-bottom: 1.75rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--serif); font-weight: 600; line-height: 1.15;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 30rem;
+  margin: 1rem auto 2rem;
+  font-size: clamp(1.1rem, 2.4vw, 1.25rem);
+  color: #E9EFE6;
+}
+
+.btn {
+  display: inline-block;
+  width: min(100%, 22rem);
+  padding: 1.15rem 2rem;
+  border-radius: 999px;
+  background: var(--dawn); color: var(--evergreen);
+  font-weight: 700; font-size: 1.2rem;
+  text-decoration: none;
+  transition: background-color .2s;
+}
+.btn:hover { background: var(--cream); }
+
+.alt { margin: 1.5rem 0 0; font-size: 1rem; color: #D5DED3; }
+.alt a { color: var(--dawn); font-weight: 700; text-underline-offset: 3px; }
+
+footer {
+  background: #0f2a20;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  font-size: 1rem; color: #D5DED3;
+  border-top: 1px solid rgba(227, 199, 119, .3);
+}
+footer p { margin: 0 0 .4rem; }
+footer a { color: var(--dawn); text-underline-offset: 3px; }
+.foot-name { font-family: var(--serif); font-size: 1.5rem; color: var(--cream); }
+.small { font-size: .875rem; opacity: .75; margin-top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
